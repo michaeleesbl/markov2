@@ -66,12 +66,9 @@ public class MarkovRunner {
         String st = fr.asString();
         st = st.replace('\n', ' ');
         //st = "this is a test yes a test";
-        MarkovTwo markov = new MarkovTwo();
-        markov.setTraining(st);
-        for (int k = 0; k < 3; k++) {
-            String text = markov.getRandomText(500);
-            printOut(text);
-        }
+        MarkovWordOne m1 = new MarkovWordOne();
+        m1.setRandom(175);
+        runModel(m1, st, 175);
     }
    
     public void runMarkovModel() {
@@ -97,4 +94,18 @@ public class MarkovRunner {
         }
     }
     
+    public void testGetFollows() {
+        String text = "this is just a test yes this is a simple test";
+        MarkovWordOne m1 = new MarkovWordOne();
+        runModel(m1, text, 200);
+    }
+    public void runMarkovTwo() {
+        FileResource fr = new FileResource();
+        String st = fr.asString();
+        st = st.replace('\n', ' ');
+        //st = "this is a test yes a test";
+        MarkovWordTwo m2 = new MarkovWordTwo();
+        m2.setRandom(549);
+        runModel(m2, st, 175);
+    }
 }

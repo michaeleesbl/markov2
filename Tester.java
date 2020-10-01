@@ -23,7 +23,7 @@ public class Tester {
         String st = fr.asString();
         st = st.replace('\n', ' ');
         markovOne.setTraining(st);
-        ArrayList<String> follows = markovOne.getFollows("t");
+        ArrayList<String> follows = markovOne.getFollows("he");
         System.out.println(follows.size());
     }
 }

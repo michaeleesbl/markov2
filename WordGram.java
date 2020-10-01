@@ -51,4 +51,9 @@ public class WordGram {
         WordGram wg = new WordGram(newWords, 0, this.length());
         return wg;
     }
+    
+    public int hashCode() {
+        String text = this.toString();
+        return text.hashCode();
+    }
 }

@@ -108,4 +108,23 @@ public class MarkovRunner {
         m2.setRandom(549);
         runModel(m2, st, 175);
     }
+    
+    public void runMarkovWord() {
+        FileResource fr = new FileResource();
+        String st = fr.asString();
+        st = st.replace('\n', ' ');
+        MarkovWord m3 = new MarkovWord(3);
+        
+        //String tgt = "with a";
+        //String[] src = tgt.split("\\s+");
+        //WordGram target = new WordGram(src, 0, 2);
+        //System.out.println(target);
+        m3.setTraining(st);
+        m3.setRandom(643);
+        //m3.getFollows(target);
+        for (int k = 0; k < 3; k++) {
+            String text = m3.getRandomText(100);
+            printOut(text);
+        }   
+    }
 }

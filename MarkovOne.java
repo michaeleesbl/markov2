@@ -49,16 +49,7 @@ public class MarkovOne implements IMarkovModel {
             follows.add(next);
             pos = start + key.length();
         }
-        /*
-        while (pos < (myText.length() - 1) && 
-               (myText.indexOf(key, pos) != -1)) {
-            int index = myText.indexOf(key, pos);
-            if (index == myText.length() - 1) break;
-            String next = Character.toString(myText.charAt(index + 1));
-            follows.add(next);
-            pos = index + 1;
-        }*/
-        //System.out.println(follows);
+
         return follows;
     }
     
